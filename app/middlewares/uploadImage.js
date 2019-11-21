@@ -3,19 +3,14 @@ const path = require('path');
 const multerS3 = require('multer-s3')
 const AWS = require('aws-sdk');
 
+// need to create a aws configuration json fileError
+// AWS.config.loadFromPath('./config/awsConfig.json');
 AWS.config.update({
-    accessKeyId: "AKIARUZVYZ7ZKLDRS5EF",
-    secretAccessKey: "XgX9p4JB7jQ1FPorSVHPDh0Bi3izr0NmcEpCwNqr",
+    accessKeyId: "your aws key here",
+    secretAccessKey: "your access key here",
     region: "us-east-1"
   });
-// AWS.config.loadFromPath('./config/awsConfig.json');
-// need to create a aws configuration json fileError
-// {
-// "accessKeyId": "your aws key here",
-// "secretAccessKey": "your access key here",
-// "region": "us-east-1"
-// }
-// save it in awsConfig.json file
+
 
 const s3 = new AWS.S3();
 
