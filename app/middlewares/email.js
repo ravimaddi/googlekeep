@@ -5,7 +5,7 @@ const sendEmail=(user,token)=>{
         sendgridTransport({
           auth: {
             api_key:
-              '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'
+              ''
           }
         })
       );
