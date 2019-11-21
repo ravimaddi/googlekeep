@@ -7,7 +7,7 @@ import EditTask from './EditTask'
 // import { Icon } from '@iconify/react';
 // import thumbTack from '@iconify/icons-fa/thumb-tack';
 import {Link} from 'react-router-dom'
-import trash from '@iconify/icons-fa/trash';
+//import trash from '@iconify/icons-fa/trash';
 import './task.css'
 //import archive from '@iconify/icons-fa/archive';
 class TaskList extends React.Component{
