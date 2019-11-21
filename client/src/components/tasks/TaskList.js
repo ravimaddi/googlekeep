@@ -1,11 +1,11 @@
 import React from 'react'
-import {Container,Row,Col} from 'react-bootstrap'
+import {Container,Row,Col,Button} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {startTaskTrash,startUnArchive} from '../../actions/tasks'
 import AddTask from './AddTask'
 import EditTask from './EditTask'
-import { Icon } from '@iconify/react';
-import thumbTack from '@iconify/icons-fa/thumb-tack';
+// import { Icon } from '@iconify/react';
+// import thumbTack from '@iconify/icons-fa/thumb-tack';
 import {Link} from 'react-router-dom'
 import trash from '@iconify/icons-fa/trash';
 import './task.css'
@@ -46,7 +46,7 @@ class TaskList extends React.Component{
                                 <div className="card-header ">
                                <strong>{t.title}</strong> 
                                  
-                               { (t.pinTask)?<Icon icon={thumbTack} />:null} 
+                               { (t.pinTask)? <p>Pinned</p>:null} 
                                 </div>
                                 {t.imageUrl.map((i,ind)=>{
                                     
@@ -66,11 +66,11 @@ class TaskList extends React.Component{
                                     <EditTask taskInfo={t}/> 
                                     </Col>
                                     <Col className="col-md-3 offset-1">
-                                   <Icon onClick={(e)=>this.handleUnArchive(t,t._id)} icon={archive}/>
+                                   <Button onClick={(e)=>this.handleUnArchive(t,t._id)}>Archive</Button>
                                    
                                    </Col>   
                                     <Col className="col-md-3 offset-1">
-                                    <Icon onClick={()=>this.handleTaskDelete(t,t._id)} icon={trash} />
+                                    <Button onClick={()=>this.handleTaskDelete(t,t._id)}>Trash</Button>
                                     
                                     </Col>   
                                 </Row>
@@ -92,7 +92,7 @@ class TaskList extends React.Component{
                                 <div className="card-header ">
                                 <strong>{t.title}</strong> 
                                  
-                               { (t.pinTask)?<Icon icon={thumbTack} />:null} 
+                               { (t.pinTask)?<p>Pinned</p> />:null} 
                                 </div>
                                 {t.imageUrl.map((i,ind)=>{
                                     
@@ -112,11 +112,11 @@ class TaskList extends React.Component{
                                 <EditTask taskInfo={t}/>  
                                 </Col>
                                 <Col className="col-md-3 offset-1">
-                                   <Icon onClick={(e)=>this.handleUnArchive(t,t._id)} icon={archive}/>
+                                   <Button onClick={(e)=>this.handleUnArchive(t,t._id)} >Archive</Button>
                                    
                                    </Col>  
                                 <Col className="col-md-3 offset-1">                                  
-                                <Icon onClick={()=>this.handleTaskDelete(t,t._id)} icon={trash} />
+                                <Button onClick={()=>this.handleTaskDelete(t,t._id)} >Trash</Button>
                                 </Col> 
                                 </Row>
                                 

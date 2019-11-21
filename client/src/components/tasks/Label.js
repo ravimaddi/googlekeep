@@ -1,8 +1,8 @@
 import React from 'react'
 import Select from 'react-select'
 import {connect} from 'react-redux'
-import thumbTack from '@iconify/icons-fa/thumb-tack';
-import { Icon } from '@iconify/react';
+//import thumbTack from '@iconify/icons-fa/thumb-tack';
+//import { Icon } from '@iconify/react';
 import {Row,Col,Container} from 'react-bootstrap'
 class Label extends React.Component{
 
@@ -37,14 +37,14 @@ class Label extends React.Component{
                     <br/>
                     <div className="row">
                     {this.props.labelList.map((t)=>{
-                        if(t.label.indexOf(`${this.state.name}`)!==-1){
+                        if(t.label.indexOf(`${this.state.name}`)!==-1 && t.label.length>0){
                         return(
                             
                             <div key={t._id} className="card col-lg-3 offset-1" style={{maxWidth:"16rem",backgroundColor:`${t.color}`}}>
                                 <div className="card-header">
                                <strong>{t.title}</strong> 
                                  
-                               { (t.pinTask)?<Icon icon={thumbTack} />:null} 
+                               { (t.pinTask)?<p>Pinned</p>:null} 
                                
                                 </div>
                                 {t.imageUrl.map((i,ind)=>{

@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Icon } from '@iconify/react';
-import thumbTack from '@iconify/icons-fa/thumb-tack';
-import archive from '@iconify/icons-fa/archive';
+//import { Icon } from '@iconify/react';
+//import thumbTack from '@iconify/icons-fa/thumb-tack';
+//import archive from '@iconify/icons-fa/archive';
 import {Row,Col,Button} from 'react-bootstrap'
 import EditTask from './EditTask'
 import {startUnArchive} from '../../actions/tasks'
@@ -25,7 +25,7 @@ class Archive extends React.Component{
                                <div className="card-header">
                                {t.title}
                                 
-                              { (t.pinTask)?<Icon icon={thumbTack} />:null} 
+                              { (t.pinTask)?<p>Pinned</p> />:null} 
                             
                              
                                </div>
@@ -49,7 +49,7 @@ class Archive extends React.Component{
                                    <Button className="btn btn-danger" onClick={(e)=>this.handleTaskDelete(e,t._id)} >Delete</Button>
                                    </Col> 
                                    <Col className="col-md-3 offset-1">
-                                   <Icon onClick={(e)=>this.handleUnArchive(t,t._id)} icon={archive}/>
+                                   <Button onClick={(e)=>this.handleUnArchive(t,t._id)}>Un Archive</Button>
                                    
                                    </Col>  
                                </Row>
@@ -68,7 +68,7 @@ class Archive extends React.Component{
                                 <div className="card-header">
                                 {t.title}
                                  
-                               { (t.pinTask)?<Icon icon={thumbTack} />:null} 
+                               { (t.pinTask)? <p>Pinned</p>:null} 
                                
                                 </div>
                                 {t.imageUrl.map((i,ind)=>{
@@ -91,7 +91,7 @@ class Archive extends React.Component{
                                 <Button className="btn btn-danger" onClick={(e)=>this.handleTaskDelete(e,t._id)} >Delete</Button>
                                 </Col> 
                                 <Col className="col-md-3 offset-1">
-                                   <Icon onClick={(e)=>this.handleUnArchive(t,t._id)} icon={archive}/>
+                                   <Button onClick={(e)=>this.handleUnArchive(t,t._id)} >Un archive</Button>
                                    
                                    </Col> 
                                 </Row>

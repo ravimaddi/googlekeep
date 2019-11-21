@@ -2,9 +2,9 @@ import React from 'react'
 import {Row,Col,Button} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {startAddTask,startEditTask} from '../../actions/tasks'
-import archive from '@iconify/icons-fa/archive';
-import { Icon } from '@iconify/react';
-import thumbTack from '@iconify/icons-fa/thumb-tack';
+//import archive from '@iconify/icons-fa/archive';
+//import { Icon } from '@iconify/react';
+//import thumbTack from '@iconify/icons-fa/thumb-tack';
 import AddLabel from './AddLabel'
 import './task.css'
 
@@ -89,7 +89,7 @@ class AddTask extends React.Component{
                 <form  onSubmit={(e)=>this.handleSubmit(e)}>
                     <div style={{backgroundColor:`${this.state.color}`}} className="card">
                         <div className="card-header">
-                            Add Task
+                            Add Note
                         </div>
                         <div className="card-body">
                             <input type="text" className="card-title form-control" placeholder="Title" onChange={(e)=>this.handleChange(e)} name="title" value={this.state.title}></input>
@@ -116,10 +116,10 @@ class AddTask extends React.Component{
                             </label>
                             </Col>
                             <Col className="col-sm-3 form-buttons">
-                            {(this.state.pinTask)?<Icon onClick={(e)=>this.handleIconClick(e)} icon={thumbTack} />:<Button type="button" onClick={(e)=>this.handlePinClick(e)} className="btn btn-primary btn-sm">Pin Task</Button>}
+                            {(this.state.pinTask)?<Button onClick={(e)=>this.handleIconClick(e)}>Un Pin</Button>:<Button type="button" onClick={(e)=>this.handlePinClick(e)} className="btn btn-primary btn-sm">Pin Task</Button>}
                             </Col>
                             <Col className="col-sm-3 form-buttons">
-                            {(this.state.archive)?<Icon onClick={(e)=>this.handleIconArchiveClick(e)} icon={archive} />:<Button type="button" onClick={(e)=>this.handleArchiveClick(e)} className="btn btn-primary btn-sm">Archive</Button>}
+                            {(this.state.archive)?<Button onClick={(e)=>this.handleIconArchiveClick(e)}>Un Archive</Button>:<Button type="button" onClick={(e)=>this.handleArchiveClick(e)} className="btn btn-primary btn-sm">Archive</Button>}
                             </Col>
                             <Col className="col-sm-3 form-buttons ">
                             
