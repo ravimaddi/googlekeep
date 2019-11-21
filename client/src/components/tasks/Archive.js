@@ -25,7 +25,7 @@ class Archive extends React.Component{
                                <div className="card-header">
                                {t.title}
                                 
-                              { (t.pinTask)?<p>Pinned</p> />:null} 
+                              { (t.pinTask)?<p>Pinned</p>:null} 
                             
                              
                                </div>
