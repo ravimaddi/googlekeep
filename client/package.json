@@ -22,7 +22,8 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "sweetalert": "^2.1.2",
-    "yup": "^0.27.0"
+    "yup": "^0.27.0",
+    "@iconify/react": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
