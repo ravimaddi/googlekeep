@@ -109,7 +109,7 @@ class AddTask extends React.Component{
                                 </Row>
                                 <Row>
                             <Col className="col-sm-2 form-buttons">
-                                <label> Color:
+                                <label> Color: 
                                     
                             <input type="color"  value={this.state.color} name="color" onChange={(e)=>this.handleChange(e)}/>
                             

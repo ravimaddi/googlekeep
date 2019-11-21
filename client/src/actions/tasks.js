@@ -160,7 +160,7 @@ export const  startSetTasks=()=>{
             swal(`${response.data.errors.message}`,"","error")
         }
         else{
-            console.log(response.data)
+            //console.log(response.data)
             dispatch(setTasks(response.data))
         }   
     })
@@ -191,7 +191,7 @@ export const startAddTask=(task)=>{
                     text: `You created new task`,
                     icon: "success",
                     timer: 1000})
-                    console.log(response.data)
+                    //console.log(response.data)
                     dispatch(addTask(response.data))
             }
 

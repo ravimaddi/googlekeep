@@ -21,6 +21,7 @@ class TaskList extends React.Component{
         this.props.dispatch(startUnArchive(t,id))
     }
     render(){
+        console.log(this.props.taskList)
         return(
             <React.Fragment>
              <Container>
