@@ -9,7 +9,7 @@ import EditTask from './EditTask'
 import {Link} from 'react-router-dom'
 import trash from '@iconify/icons-fa/trash';
 import './task.css'
-import archive from '@iconify/icons-fa/archive';
+//import archive from '@iconify/icons-fa/archive';
 class TaskList extends React.Component{
    
     handleTaskDelete=(obj,id)=>{
