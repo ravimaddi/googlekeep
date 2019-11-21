@@ -92,7 +92,7 @@ class TaskList extends React.Component{
                                 <div className="card-header ">
                                 <strong>{t.title}</strong> 
                                  
-                               { (t.pinTask)?<p>Pinned</p> />:null} 
+                               { (t.pinTask)?<p>Pinned</p>:null} 
                                 </div>
                                 {t.imageUrl.map((i,ind)=>{
                                     
