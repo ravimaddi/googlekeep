@@ -22,7 +22,7 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "sweetalert": "^2.1.2",
-    "yup": "^0.27.0",
+    "yup": "^0.27.0"
     
   },
   "scripts": {
@@ -45,9 +45,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@iconify/icons-fa": "^1.0.1",
-    "@iconify/react": "^1.1.1"
   }
+ 
 }
