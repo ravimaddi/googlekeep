@@ -37,7 +37,7 @@ class Label extends React.Component{
                     <br/>
                     <div className="row">
                     {this.props.labelList.map((t)=>{
-                        if(t.label.indexOf(`${this.state.name}`)!==-1 && t.label.length>0){
+                        if(t.label.indexOf(`${this.state.name}`)!==-1 && t.label.length!==0){
                         return(
                             
                             <div key={t._id} className="card col-lg-3 offset-1" style={{maxWidth:"16rem",backgroundColor:`${t.color}`}}>
@@ -70,8 +70,8 @@ class Label extends React.Component{
                         }
                     })}
                     </div>
-                    </Container>
-                 </div>
+                </Container>
+            </div>
 
             
         )

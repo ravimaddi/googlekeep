@@ -50,23 +50,23 @@ const SignupSchema = Yup.object().shape({
       {({ errors, touched }) => (
         <Form className="customerform">
             <label>Name:-
-          <Field className="input" name="name" />
+          <Field className="input form-group" name="name" />
           {errors.name && touched.name ? (
             <div style={style}>{errors.name}</div>
           ) : null}
           </label><br/>
           <label>Mobile:-
-          <Field className="input" name="mobile" />
+          <Field className="input form-group" name="mobile" />
           {errors.mobile && touched.mobile ? (
             <div style={style}>{errors.mobile}</div>
           ) : null}
           </label><br/>
           <label>Email:-
-          <Field className="input" name="email" type="email" />
+          <Field className="input form-group" name="email" type="email" />
           {errors.email && touched.email ? <div style={style}>{errors.email}</div> : null}
           </label><br/>
           <label>Password:-
-          <Field className="input" name="password" type="password" />
+          <Field className="input form-group" name="password" type="password" />
           {errors.password && touched.password ? <div style={style}>{errors.password}</div> : null}
           </label><br/>
           <Button variant="primary"type="submit">Submit</Button>

@@ -30,7 +30,7 @@ class EditTask extends React.Component{
           <div>
            
     
-            <Button className="btn btn-warning" onClick={this.handleShow}>
+            <Button className="btn btn-warning btn-sm" onClick={this.handleShow}>
               Edit 
             </Button>
     

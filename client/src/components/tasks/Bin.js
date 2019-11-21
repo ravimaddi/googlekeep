@@ -26,32 +26,29 @@ class Bin extends React.Component{
         return(
             <div>
                 <div className="container">
-            <h1>Bin</h1>
-            <div className="row">
+                    <h1>Bin</h1>
+                    <div className="row">
                    
                    {this.props.binList.map((t)=>{
                        if(t.bin){
-                       return(
+                        return(
                            <div key={t._id} className="card col-lg-3 offset-1" style={{maxWidth: "18rem",backgroundColor:`${t.color}`}}>
                                <div className="card-header">
                                <strong>{t.title}</strong>
                              
-                               </div>
-                               {t.imageUrl.map((i,ind)=>{
-                                   
-                                  return <img key={ind}src={i} className="card-img-top" alt="some"></img>
-                               })}
-                               <div className="card-body">
-                                   <p  className="card-text" >{t.taskBody}</p>
-                                   <hr/>
-                                   <strong>Labels</strong>
-                                  {t.label.length>0 && t.label.map((l,i)=>{
+                            </div>
+                            {t.imageUrl.map((i,ind)=>{
+                                return <img key={ind}src={i} className="card-img-top" alt="some"></img>
+                            })}
+                            <div className="card-body">
+                                <p  className="card-text" >{t.taskBody}</p>
+                                <hr/>
+                                <strong>Labels</strong>
+                                {t.label.length>0 && t.label.map((l,i)=>{
                                    return <p key={i}>{l}</p>
-                                   })
-                                   
-                               }
+                                })
+                                }
                                <Row>
-                                
                                    <Col className="col-md-3 offset-3">
                                    <Button className="btn btn-danger" onClick={(e)=>this.handleTaskDelete(e,t._id)} >Delete</Button>
                                    </Col>   
@@ -60,7 +57,8 @@ class Bin extends React.Component{
                                <br/>
                            </div>
                        )
-                       }else{
+                       }
+                       else{
                            return null
                        }
                    })}

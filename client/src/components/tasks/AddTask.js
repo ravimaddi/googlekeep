@@ -19,7 +19,7 @@ class AddTask extends React.Component{
             pinTask:(props.taskInfo)?props.taskInfo.pinTask:false,
             label:(props.taskInfo)?props.taskInfo.label:[],
             archive:(props.taskInfo)?props.taskInfo.archive:false,
-            file:''
+            file:(props.taskInfo)?props.taskInfo.file:''
         }
 
     }
@@ -34,11 +34,13 @@ class AddTask extends React.Component{
         this.setState({pinTask:false})
     }
     handleLableSubmit=(label)=>{
+        if(label!==''){
         this.setState((prevState)=>{
             return{
                 label:[...prevState.label,label]
             }
         })
+    }
     }
     handleIconArchiveClick=(e)=>{
         this.setState({archive:false})
@@ -133,10 +135,10 @@ class AddTask extends React.Component{
                             <Row>
                             <Col className="col-sm-6 form-buttons ">
                             <input
-                                                    name="image" onChange={this.fileHandle}
-                                                    multiple
-                                                    type="file"
-                                                />
+                                name="image" onChange={this.fileHandle}
+                                multiple
+                                type="file"
+                                 />
                             </Col>
                             </Row>
                         </div>

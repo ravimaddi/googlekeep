@@ -1,39 +1,29 @@
 import axios from '../config/axios'
 import swal from 'sweetalert'
-
-
 export const addTask=(task)=>{
     return {
         type:"ADD_TASK",
         payload:task
     }
 }
-
-
 export const setTasks=(tasks)=>{
     return{
         type:"SET_TASK",
         payload:tasks
     }
 }
-
 export const editTask=(task)=>{
     return {
         type:"EDIT_TASK",
         payload:task
     }
-
 }
-
-
 export const deleteTask=(id)=>{
     return{
         type:"REMOVE_TASK",
         payload:id
     }
 }
-
-
 export const startEditTask=(obj,id)=>{
     return(dispatch)=>{
         axios.put(`/task/${id}`,obj,{
@@ -55,7 +45,6 @@ export const startEditTask=(obj,id)=>{
             dispatch(editTask(response.data))
             }
         })
-    
         .catch((err)=>{
             alert(err)
         })
@@ -89,9 +78,7 @@ export const startTaskDelete=(id)=>{
     }
 }
 
-
 export const startUnArchive=(obj,id)=>{
-
     return(dispatch)=>{
         axios.put(`/task/${id}`,obj,{
             headers:{
@@ -103,12 +90,22 @@ export const startUnArchive=(obj,id)=>{
                 swal(`${response.data.errors.message}`,"","error")
             }
             else{
+                if(response.data.archive){
             swal({
-                title: "Edited!",
-                text: `UnArchived!`,
+                title: "Archived!",
+                text: `Archived!`,
                 icon: "success",
                 timer: 1000
                 })
+            }
+            else{
+                swal({
+                    title: "UnArchived!",
+                    text: `UnArchived!`,
+                    icon: "success",
+                    timer: 1000
+                    })
+            }
             dispatch(editTask(response.data))
             }
         })
@@ -133,7 +130,7 @@ export const startTaskTrash=(obj,id)=>{
             }
             else{
             swal({
-                title: "Edited!",
+                title: "Deleted!",
                 text: `Moved to Trash`,
                 icon: "success",
                 timer: 1000

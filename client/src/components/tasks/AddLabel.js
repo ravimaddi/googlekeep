@@ -26,6 +26,7 @@ class AddLabel extends React.Component {
           e.stopPropagation()
           this.setState({ show: false });
           this.props.handleLableSubmit(this.state.label)
+          this.setState({label:''})
       }
 
 

@@ -11,10 +11,10 @@ import {startSetTasks} from './actions/tasks'
 
 const store = configureStore()
 
-console.log(store.getState())
-store.subscribe(()=>{
-    console.log(store.getState())
-})
+// console.log(store.getState())
+// store.subscribe(()=>{
+//     console.log(store.getState())
+// })
 
 if(localStorage.getItem('authToken')){
     axios.get('/users/account',{
