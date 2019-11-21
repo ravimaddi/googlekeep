@@ -12,7 +12,7 @@ router.delete('/users/logout',userAuthentication,userController.logout)
 
 router.post('/task',userAuthentication,uploadFile.array('image',3),tasksController.createTask)
 router.get('/task',userAuthentication,tasksController.list)
-router.put('/task/:id',userAuthentication,tasksController.update)
+router.put('/task/:id',userAuthentication,uploadFile.array('image',3),tasksController.update)
 router.delete('/task/:id',userAuthentication,tasksController.deleteTask)                            
 
 router.post('/reset',userController.checkEmail)
