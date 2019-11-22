@@ -67,7 +67,7 @@ function App(props) {
       <Route path ="/users/login" component={Login}/>
       <Route path ="/dashboard"  component={Dashboard}/>
       <Route path="/reset" exact={true} component={ResetPassword}/>
-      <Route path="/new-Password" component={NewPassword}/>
+      <Route path="/api/new-Password" component={NewPassword}/>
       <Route path="/archive" component={Archive}/>
       <Route path ="/bin" component={Bin}/>
       <Route path ="/label" component={Label}/>
