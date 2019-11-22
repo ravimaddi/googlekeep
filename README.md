@@ -1,6 +1,6 @@
 Overview
 
-Google Keep is an online notes application built on ReactJS, ExpressJs and Node. This provide the user to manage his work in an efficient manner by keeping track of all his notes. User can easily create notes, add labels for each notes,filter the notes based on labels,archive and unarchive the notes and move the notes to trash and delete it permanently. Images can be uploaded for each notes he create and they are stored in amazonS3 storage.  The code in this repository covers front end and back end of this project.
+Google Keep is an online notes application built on ReactJS, ExpressJs and Node. This provide the user to manage his work in an efficient manner by keeping track of all his notes. User can easily create notes, add labels for each notes,filter the notes based on labels,archive and unarchive the notes and move the notes to trash and delete it permanently. Images can be uploaded for each notes and they are stored in amazonS3 storage.Forgot password functionality which sends a password reset link to the registered email-Id.  The code in this repository covers front end and back end of this project.
 
 Dependencies and installation
 
