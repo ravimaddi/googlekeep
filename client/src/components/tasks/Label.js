@@ -54,7 +54,7 @@ class Label extends React.Component{
                                 <div className="card-body">
                                     <p  className="card-text" >{t.taskBody}</p>
                                     <hr/>
-                                    <strong>Labels</strong>
+                                    {t.label.length>0 && <strong>Label</strong>}
                                     {t.label.length>0 && t.label.map((l,i)=>{
                                     return <p key={i}>{l}</p>
                                     })

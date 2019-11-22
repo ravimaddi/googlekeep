@@ -34,14 +34,15 @@ class AddTask extends React.Component{
         this.setState({pinTask:false})
     }
     handleLableSubmit=(label)=>{
-        if(label!==''){
+        
         this.setState((prevState)=>{
             return{
-                label:[...prevState.label,label]
+                label:[...prevState.label,...label]
             }
         })
     }
-    }
+    
+    
     handleIconArchiveClick=(e)=>{
         this.setState({archive:false})
     }
@@ -53,18 +54,27 @@ class AddTask extends React.Component{
     fileHandle = (e) => {
 
         const file = e.target.files
-        // console.log(file)
         this.setState(() => ({ file }))
     }
     
     handleSubmit=(e)=>{
         e.preventDefault()
         if(this.props.taskInfo){
-            const obj=Object.assign({},this.state)
-            this.props.dispatch(startEditTask(obj,this.props.taskInfo._id))
+            const formData = new FormData();
+              const {title,taskBody,color,pinTask,label}=this.state
+              formData.append('title',title)
+              formData.append('taskBody',taskBody)
+              formData.append('color',color)
+              formData.append('pinTask',pinTask)
+              formData.append('label',label)
+              for (const file of this.state.file) {
+                formData.append('image', file)
+            }
+           
+            this.props.dispatch(startEditTask(formData,this.props.taskInfo._id))
           }
           else{
-              //console.log('state',this.state)
+             
               const formData = new FormData();
               const {title,taskBody,color,pinTask,label}=this.state
               formData.append('title',title)
@@ -75,9 +85,7 @@ class AddTask extends React.Component{
               for (const file of this.state.file) {
                 formData.append('image', file)
             }
-           // console.log('formData',formData)
-           // const task = Object.assign({},this.state)
-            //console.log('task',task)
+
           this.setState({title:'',taskBody:'',color:'#ffffff',pinTask:false,file:'',label:[],archive:false})
             this.props.dispatch(startAddTask(formData))
           }

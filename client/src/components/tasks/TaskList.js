@@ -52,7 +52,8 @@ class TaskList extends React.Component{
                                 <div className="card-body">
                                     <p className="card-text" >{t.taskBody}</p>
                                     <hr/>
-                                    <strong>Label</strong> 
+                                    {t.label.length>0 && <strong>Label</strong>}
+                                     
                                     {t.label.length>0 && t.label.map((l,i)=>{
                                     return <p key={i}>{l}</p>
                                     })
@@ -96,7 +97,7 @@ class TaskList extends React.Component{
                                 <div className="card-body">
                                     <p  className="card-text" >{t.taskBody}</p>
                                     <hr/>
-                                    <strong>Label</strong> 
+                                    {t.label.length>0 && <strong>Label</strong>} 
                                     {t.label.length>0 && t.label.map((l,i)=>{
                                     return <p key={i}>{l}</p>
                                     })

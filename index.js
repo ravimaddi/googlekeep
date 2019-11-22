@@ -2,7 +2,6 @@ const express =require('express')
 const connectDb=require('./config/database')
 const router =require('./config/routes')
 const cors = require('cors')
-
 const port = process.env.PORT || 3015;
 connectDb()
 const app=express()

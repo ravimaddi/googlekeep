@@ -12,7 +12,9 @@ class AddLabel extends React.Component {
     }
 
     handleChange=(e)=>{
+      
         this.setState({label:e.target.value})
+      
     }
     handleClose=()=> {
         this.setState({ show: false });
@@ -25,8 +27,12 @@ class AddLabel extends React.Component {
           e.preventDefault()
           e.stopPropagation()
           this.setState({ show: false });
-          this.props.handleLableSubmit(this.state.label)
+          if(this.state.label!==''){
+          const arr=[]
+          arr.push(this.state.label)
+          this.props.handleLableSubmit(arr)
           this.setState({label:''})
+          }
       }
 
 

@@ -2,13 +2,15 @@ const multer = require('multer');
 const path = require('path');
 const multerS3 = require('multer-s3')
 const AWS = require('aws-sdk');
+const dotenv = require('dotenv');
+dotenv.config()
 
 // need to create a aws configuration json fileError
 // AWS.config.loadFromPath('./config/awsConfig.json');
 AWS.config.update({
-    accessKeyId: "your aws key here",
-    secretAccessKey: "your access key here",
-    region: "us-east-1"
+    accessKeyId: process.env.ACCESS_KEY_ID,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    region:process.env.REGION
   });
 
 
