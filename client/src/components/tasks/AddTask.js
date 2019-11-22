@@ -37,7 +37,7 @@ class AddTask extends React.Component{
         
         this.setState((prevState)=>{
             return{
-                label:[...prevState.label,...label]
+                label:[...prevState.label,label]
             }
         })
     }
