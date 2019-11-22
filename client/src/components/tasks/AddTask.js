@@ -37,7 +37,7 @@ class AddTask extends React.Component{
         
         this.setState((prevState)=>{
             return{
-                label:[...prevState.label,...label]
+                label:[...prevState.label,label]
             }
         })
     }
@@ -60,18 +60,8 @@ class AddTask extends React.Component{
     handleSubmit=(e)=>{
         e.preventDefault()
         if(this.props.taskInfo){
-            const formData = new FormData();
-              const {title,taskBody,color,pinTask,label}=this.state
-              formData.append('title',title)
-              formData.append('taskBody',taskBody)
-              formData.append('color',color)
-              formData.append('pinTask',pinTask)
-              formData.append('label',label)
-              for (const file of this.state.file) {
-                formData.append('image', file)
-            }
-           
-            this.props.dispatch(startEditTask(formData,this.props.taskInfo._id))
+            const obj=Object.assign({},this.state)
+            this.props.dispatch(startEditTask(obj,this.props.taskInfo._id))
           }
           else{
              

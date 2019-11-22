@@ -17,7 +17,7 @@ const sendEmail=(user,token)=>{
         subject: 'Password reset',
         html: `
           <p>You requested a password reset</p>
-          <p>Click this <a href="https://ravi-keep.herokuapp.com/reset/${token}">link</a> to set a new password.</p>
+          <p>Click this <a href="https://ravi-keep.herokuapp.com/api/reset-pass/${token}">link</a> to set a new password.</p>
         `
       })
     

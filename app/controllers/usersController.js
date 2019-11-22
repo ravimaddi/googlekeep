@@ -79,15 +79,13 @@ module.exports.checkToken=(req,res)=>{
     const token = req.params.token;
     User.findOne({resetToken:token})
     .then((user)=>{
-        // if(!user){
-        //     res.send('token expired')
-        // }
-        res.redirect(`https://ravi-keep.herokuapp.com/new-password?userId=${user._id}&passwordToken=${token}`)
-        
-    }).catch((err)=>{
-        res.send(err)
+        res.redirect(`https://ravi-keep.herokuapp.com/api/new-password?userId=${user._id}&passwordToken=${token}`)
     })
+        
+    .catch((err)=>{
+        res.send(err)
 
+    })
 }
 
 module.exports.newPassword=(req,res)=>{

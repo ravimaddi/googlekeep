@@ -27,13 +27,10 @@ class AddLabel extends React.Component {
           e.preventDefault()
           e.stopPropagation()
           this.setState({ show: false });
-          if(this.state.label!==''){
-          const arr=[]
-          arr.push(this.state.label)
-          this.props.handleLableSubmit(arr)
+          this.props.handleLableSubmit(this.state.label)
           this.setState({label:''})
           }
-      }
+      
 
 
     render(){

@@ -16,7 +16,7 @@ router.put('/task/:id',userAuthentication,uploadFile.array('image',3),tasksContr
 router.delete('/task/:id',userAuthentication,tasksController.deleteTask)                            
 
 router.post('/reset',userController.checkEmail)
-router.get('/reset/:token', userController.checkToken);
+router.get('/reset-pass/:token', userController.checkToken);
 router.post('/new-password', userController.newPassword);
 
 module.exports=router
