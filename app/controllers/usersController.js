@@ -57,7 +57,7 @@ module.exports.checkEmail=(req,res)=>{
     .then((user)=>{
         
         if(!user){
-            res.json({errors:'Email Id is not avaliable'})
+            res.json({errors:'Email Id is not Registered'})
         }
         else{
             res.json(user)
@@ -79,8 +79,13 @@ module.exports.checkToken=(req,res)=>{
     const token = req.params.token;
     User.findOne({resetToken:token})
     .then((user)=>{
-        res.redirect(`http://localhost:3000/new-password?userId=${user._id}&passwordToken=${token}`)
+        // if(!user){
+        //     res.send('token expired')
+        // }
+        res.redirect(`https://ravi-keep.herokuapp.com/new-password?userId=${user._id}&passwordToken=${token}`)
         
+    }).catch((err)=>{
+        res.send(err)
     })
 
 }

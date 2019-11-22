@@ -8,8 +8,8 @@ dotenv.config()
 // need to create a aws configuration json fileError
 // AWS.config.loadFromPath('./config/awsConfig.json');
 AWS.config.update({
-    accessKeyId: process.env.ACCESS_KEY_ID,
-    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    accessKeyId:process.env.ACCESS_KEY_ID,
+    secretAccessKey:process.env.SECRET_ACCESS_KEY,
     region:process.env.REGION
   });
 
@@ -39,6 +39,5 @@ const upload = multer({
 //     }
 //   });
 //   const upload= multer({ storage: fileStorage }).single('image')
-
 
 module.exports = upload

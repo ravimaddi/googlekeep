@@ -17,7 +17,7 @@ class ResetPassword extends React.Component{
         axios.post('/reset',this.state)
         .then((response)=>{
             if(response.data.errors){
-                alert(response.data.errors.message)
+                alert(response.data.errors)
 
             }else{
                
