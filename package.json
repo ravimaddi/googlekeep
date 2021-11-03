@@ -32,6 +32,6 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "nodemon": "^1.19.4",
     "path": "^0.12.7",
-    "validator": "^12.0.0"
+    "validator": "^13.7.0"
   }
 }
